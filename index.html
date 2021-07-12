@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="/styles/style.css">
+	<script defer src="/script/index.js"></script>
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body onload="buttonPercentage(10)">
+	<main>
+		<div class="app-container">
+			<h1>SPLI<br>TTER</h1>
+			<div class="calculator-container">
+				<div class="left">
+					<div class="bill-container">
+						<p>Bill</p>
+						<div class="bill-input is-active">
+							<img class="dollar-icon" src="./images/icon-dollar.svg" alt="">
+							<input oninput="onChange()" id="bill-input" type="number" min="0" >
+						</div>
+						
+					</div>
+					<div class="tip-container">
+						<p>Select Tip %</p>
+						<div class="tip-buttons">
+							<button class="inactive" onclick="buttonPercentage(5)" id="5">5%</button>
+							<button class="inactive" onclick="buttonPercentage(10)" id="10">10%</button>
+							<button class="inactive" onclick="buttonPercentage(15)" id="15">15%</button>
+							<button class="inactive" onclick="buttonPercentage(25)" id="25">25%</button>
+							<button class="inactive" onclick="buttonPercentage(50)" id="50">50%</button>
+							<input  oninput="onChange()" id="custom-percentage" type="number" placeholder="Custom">
+						</div>
+					</div>
+					<div class="people-container">
+						<p>Number of People</p>
+						<div class="people-input">
+							<img src="./images/icon-person.svg" alt="">
+							<input oninput="onChange()" id="people-input" min="1" type="number" name="" >
+						</div>
+					</div>
+				</div>
+				<div class="right">
+					<div class="tip-container">
+						<p class="tip">
+							Tip Amount <br>
+							<span>/ person</span>
+						</p>
+						<p id="tip-display">&dollar;0.00</p>
+					</div>
+					<div class="total-container">
+						<p class="total">
+							Total <br>
+							<span>/ person</span>
+						</p>
+						<p id="total-display">&dollar;0.00</p>
+					</div>
+					<button onclick="reset()" id="reset">Reset</button>
+				</div>
+			</div>
+		</div>
+	</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/TendaiChikwiri" target="_blank">Tendai Chikwiri</a>.
+  </div>
+</body>
+</html>

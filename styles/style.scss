@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+.selected-btn {
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem;
+  background: hsl(185, 41%, 84%);
+  color: hsl(183, 100%, 15%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: hsl(185, 41%, 84%);
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .attribution {
+    padding: 1rem;
+    margin-bottom: 0;
+    margin-top: auto;
+  }
+}
+
+.app-container {
+  width: 70%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  h1 {
+    color: hsl(183, 100%, 15%);
+    margin-top: 3rem;
+    text-align: center;
+    height: 15%;
+  }
+}
+
+.calculator-container {
+  margin-top: 3rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  padding: 1rem;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.left {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .bill-container {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    p {
+      color: hsl(186, 14%, 43%);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .bill-input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: hsl(189, 41%, 97%);
+      border-radius: 15px;
+      padding: 0.5rem;
+      img {
+        object-fit: contain;
+        height: 1.5rem;
+        width: 10%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      // Removes arrow on number input
+      // Chrome, Safari, Edge, Opera
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      // Firefox
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      input {
+        padding: 0.5rem;
+        color: hsl(184, 14%, 56%);
+        font-size: 1.5rem;
+        font-weight: 700;
+        outline: none;
+        width: 90%;
+        text-align: right;
+        border: none;
+        background-color: inherit;
+        &:focus > & {
+          border: 2px solid hsl(172, 67%, 45%);
+        }
+      }
+    }
+  }
+  .tip-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    p {
+      color: hsl(186, 14%, 43%);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .tip-buttons {
+      display: grid;
+      grid-template-columns: 33.33% 33.33% 33.33%;
+      gap: 0.25rem;
+      .inactive {
+        transition: 0.4s ease-in-out;
+        cursor: pointer;
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: hsl(183, 100%, 15%);
+        border: none;
+        padding: 0.5rem;
+      }
+      input {
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.5rem;
+        background-color: hsl(189, 41%, 97%);
+        border: none;
+        border-radius: 10px;
+      }
+      // Removes arrow on number input
+      // Chrome, Safari, Edge, Opera
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      // Firefox
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+  .people-container {
+    display: flex;
+    flex-direction: column;
+    p {
+      color: hsl(186, 14%, 43%);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .people-input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background: hsl(189, 41%, 97%);
+      border-radius: 15px;
+      padding: 0.5rem;
+    }
+    img {
+      object-fit: contain;
+      height: 1.5rem;
+      width: 10%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+    // Removes arrow on number input
+    // Chrome, Safari, Edge, Opera
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    // Firefox
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    input {
+      color: hsl(184, 14%, 56%);
+      font-size: 1.5rem;
+      font-weight: 700;
+      outline: none;
+      width: 90%;
+      text-align: right;
+      border: none;
+      background-color: inherit;
+    }
+  }
+}
+
+.right {
+  padding: 1rem;
+  background-color: hsl(183, 100%, 15%);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .tip-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tip {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      span {
+        color: hsl(172, 67%, 45%);
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+    #tip-display {
+      font-size: 3rem;
+      color: hsl(172, 67%, 45%);
+    }
+  }
+  .total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .total {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 700;
+      span {
+        color: hsl(172, 67%, 45%);
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+    #total-display {
+      font-size: 3rem;
+      color: hsl(172, 67%, 45%);
+    }
+  }
+
+  #reset {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    &:hover {
+      background: hsl(185, 41%, 84%);
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    height: auto;
+  }
+  .calculator-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .app-container {
+    width: 90%;
+  }
+}
